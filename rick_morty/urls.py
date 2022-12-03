@@ -6,4 +6,5 @@ urlpatterns = [
     path("generate/", views.GenerateDB.as_view(), name="generate"),
     path("delete/", views.DeleteDB.as_view(), name="delete"),
     path("list/", views.ListDB.as_view(), name="list"),
+    path("detail/", views.DetailDB.as_view(), name="detail"),
 ]

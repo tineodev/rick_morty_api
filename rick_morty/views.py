@@ -28,8 +28,17 @@ class DeleteDB(View):
 
 class ListDB(View):
     def get(self, request):
-        template_name = 'rick_morty/view.html'
+        template_name = 'rick_morty/list.html'
         extra_context = {
             'lista': Pokemon.objects.all()
+        }
+        return render(request, template_name, extra_context)
+
+class DetailDB(View):
+    def get(self, request):
+        id = 1
+        template_name = 'rick_morty/detail.html'
+        extra_context = {
+            'personaje' : Pokemon.objects.get(id=id)
         }
         return render(request, template_name, extra_context)
