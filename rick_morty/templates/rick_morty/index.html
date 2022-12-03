@@ -1,0 +1,28 @@
+{% extends 'rick_morty/layout/layout.html' %}
+
+{% comment %} ! Añadir enlaces {% endcomment %}
+
+{% block label_page %}Home{% endblock label_page %}
+
+
+{% block body %}
+
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="https://assets1.ignimgs.com/2018/06/22/00-1529699545246.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Rick and Morty</h1>
+      <p class="lead">The show revolves around the adventures of the members of the Smith household, which consists of parents Jerry and Beth, their children Summer and Morty, and Beth's father, Rick Sanchez, who lives with them as a guest...</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start m-4">
+        <button type="button" class="btn btn-outline-primary btn-lg px-4 me-md-2">Generate</button>
+        <button type="button" class="btn btn-outline-success btn-lg px-4">List</button>
+        <button type="button" class="btn btn-outline-danger btn-lg px-4">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock body %}
