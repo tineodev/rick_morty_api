@@ -14,5 +14,7 @@ class Pokemon(models.Model):
     episode = models.CharField(max_length=100)
     created = models.DateTimeField(auto_now=False, auto_now_add=False)
 
+    class Meta:
+        db_table = 'db_characters'
 
 

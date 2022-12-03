@@ -12,5 +12,8 @@ class Index(View):
 
 class GenerateDB(View):
     def get(self,request):
+        return redirect('index')
 
+class DeleteDB(View):
+    def get(self,request):
         return redirect('index')
