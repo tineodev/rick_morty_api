@@ -8,6 +8,7 @@ response = urllib.request.urlopen(url_api)
 libros = json.loads(response.read())
 
 for i in libros['results']:
+    pm_id =i['id']
     pm_name =i['name']
     pm_status = i['status']
     pm_species =i['species']

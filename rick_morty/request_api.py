@@ -7,6 +7,7 @@ def request_api(pm_valor, pm_model):
         libro = json.loads(response.read())
 
         for i in libro['results']:
+            pm_id =i['id']
             pm_name =i['name']
             pm_status = i['status']
             pm_species =i['species']
@@ -19,4 +20,4 @@ def request_api(pm_valor, pm_model):
             pm_created =i['created']
 
 
-            pm_model.objects.create(name=pm_name, status =pm_status, species=pm_species,type_r=pm_type, gender=pm_gender, origin_name=pm_origin, location_name=pm_location, image=pm_image, created=pm_created)
+            pm_model.objects.create(id_self=pm_id,name=pm_name, status =pm_status, species=pm_species,type_r=pm_type, gender=pm_gender, origin_name=pm_origin, location_name=pm_location, image=pm_image, created=pm_created)
