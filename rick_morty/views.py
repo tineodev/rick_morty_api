@@ -24,3 +24,12 @@ class DeleteDB(View):
     def get(self,request):
         Pokemon.objects.all().delete()
         return redirect('index')
+
+
+class ListDB(View):
+    def get(self, request):
+        template_name = 'rick_morty/view.html'
+        extra_context = {
+            'hola': 'gooo'
+        }
+        return render(request, template_name, extra_context)

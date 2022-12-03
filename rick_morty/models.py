@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Pokemon(models.Model):
-    id_self = models.IntegerField(default=-1)
+    id_self = models.IntegerField()
     name = models.CharField(max_length=50)
     status = models.CharField(max_length=20)
     species = models.CharField(max_length=20)
