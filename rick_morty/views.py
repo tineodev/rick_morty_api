@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect
 
 from django.views.generic import View
 
-import urllib.request
-import json
-
 # Create your views here.
 
 class Index(View):
@@ -15,6 +12,5 @@ class Index(View):
 
 class GenerateDB(View):
     def get(self,request):
-        url_api = 'https://rickandmortyapi.com/api/character?page=1'
 
         return redirect('index')
