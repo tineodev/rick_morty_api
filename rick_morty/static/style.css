@@ -1,3 +1,8 @@
-div.div_titulo h5{
-  color: rebeccapurple;
+li h1 {
+  color: purple;
+}
+
+div.card-body h3 {
+  margin: 0;
+  color: purple;
 }

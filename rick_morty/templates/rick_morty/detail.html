@@ -7,9 +7,10 @@
 {% block body %}
 
   <div class="text-center">
-    <h1 class="display-5 fw-bold pt-3 text-primary" >Ricky Y Morty - Detail</h1>
+    <h1 class="display-5 fw-bold pt-3 text-primary" >Ricky and Morty - Detail</h1>
     <p class="lead">
-      <a class="btn btn-success btn-lg px-4 gap-3 m-2" href="{% url 'index' %}" role="button">Home</a>
+      <a class="btn btn-outline-dark btn-lg px-4 gap-3 m-2" href="{% url 'index' %}" role="button">Home</a>
+      <a class="btn btn-outline-success btn-lg px-4 gap-3 m-2" href="{% url 'index' %}" role="button">Home</a>
     </p>
 
     <div class="cover-container d-flex w-50 h-100 p-3 mx-auto flex-column">
@@ -29,7 +30,5 @@
         </ul>
 
   </div>
-
-
 
 {% endblock body %}

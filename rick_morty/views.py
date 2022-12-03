@@ -35,8 +35,8 @@ class ListDB(View):
         return render(request, template_name, extra_context)
 
 class DetailDB(View):
-    def get(self, request):
-        id = 1
+    def get(self, request, id):
+        # id = 1
         template_name = 'rick_morty/detail.html'
         extra_context = {
             'personaje' : Pokemon.objects.get(id=id)
