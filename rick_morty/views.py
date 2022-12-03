@@ -30,6 +30,6 @@ class ListDB(View):
     def get(self, request):
         template_name = 'rick_morty/view.html'
         extra_context = {
-            'hola': 'gooo'
+            'lista': Pokemon.objects.all()
         }
         return render(request, template_name, extra_context)
