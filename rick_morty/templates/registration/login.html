@@ -9,7 +9,7 @@
   <main class="form-signin w-50 m-auto">
     <form method='post' novalidate>
       {% csrf_token %}
-      <img class="mb-4" src="https://static.wikia.nocookie.net/wiki-de-rick-morty/images/6/60/Rick_and_Morty.png/revision/latest/scale-to-width-down/1440?cb=20210623034924&path-prefix=es" alt="Logo_Rick_Morty" width="500">
+      <a href="{% url 'index' %}"><img class="mb-4" src="https://static.wikia.nocookie.net/wiki-de-rick-morty/images/6/60/Rick_and_Morty.png/revision/latest/scale-to-width-down/1440?cb=20210623034924&path-prefix=es" alt="Logo_Rick_Morty" width="500"></a>
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
   
       <div class="form-floating">

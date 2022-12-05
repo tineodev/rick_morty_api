@@ -36,7 +36,9 @@ class DetailDB(View):
 
 
 class MainPage(View):
-    template_name = 'rick_morty/main.html'
+    def get(self, request):
+        template_name = 'rick_morty/main.html'
+        return render(request, template_name)
 
 class CreateUser(CreateView):
     form_class = NewUser

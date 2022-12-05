@@ -10,7 +10,7 @@ urlpatterns = [
     path("list/", views.ListDB.as_view(), name="list"),
     path("detail/<int:id>", views.DetailDB.as_view(), name="detail"),
 
-    path("main/", views.MainPage.as_view(), name="main"),
+    path("main_page/", views.MainPage.as_view(), name="main"),
     path("generate/", views.GenerateDB.as_view(), name="generate"),
     path("delete/", views.DeleteDB.as_view(), name="delete"),
 
