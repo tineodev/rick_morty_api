@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 from django.contrib.auth.views import LoginView, logout_then_login
+from .views import CreateUser
 
 urlpatterns = [
     path("", views.Index.as_view(), name="index"),

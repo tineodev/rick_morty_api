@@ -15,17 +15,6 @@ class Index(View):
         return render(request, template_name)
 
 
-class GenerateDB(View):
-    def get(self,request):
-        request_api(2,Rick_Morty)
-        return redirect('index')
-
-class DeleteDB(View):
-    def get(self,request):
-        Rick_Morty.objects.all().delete()
-        return redirect('index')
-
-
 class ListDB(View):
     def get(self, request):
         template_name = 'rick_morty/list.html'
@@ -42,3 +31,22 @@ class DetailDB(View):
             'personaje' : Rick_Morty.objects.get(id=id)
         }
         return render(request, template_name, extra_context)
+
+
+class MainPage(View):
+    template_name = 'rick_morty/main.html'
+
+class CreateUser():
+    template_name = 'registration/register.html'
+
+
+class GenerateDB(View):
+    def get(self,request):
+        request_api(2,Rick_Morty)
+        return redirect('index')
+
+class DeleteDB(View):
+    def get(self,request):
+        Rick_Morty.objects.all().delete()
+        return redirect('index')
+
