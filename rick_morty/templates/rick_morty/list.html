@@ -9,6 +9,12 @@
   <h1 class="display-5 fw-bold pt-3 text-primary">Ricky and Morty - Characters</h1>
   
   <a class="btn btn-outline-dark btn-lg px-4 gap-3" href="{% url 'index' %}" role="button">Home</a>
+  
+  {% if request.user.is_authenticated %}
+    <p class="lead mt-2 mb-0">User: {{request.user.username}}</p>
+    <a href="{% url 'logout' %}"><button type="button" class="btn btn-outline-danger btn-lg px-4 mt-2">Log out</button><a>
+
+  {% endif %}
 </div>
 
 
