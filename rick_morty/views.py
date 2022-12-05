@@ -36,7 +36,7 @@ class DetailDB(View):
 class MainPage(View):
     template_name = 'rick_morty/main.html'
 
-class CreateUser():
+class CreateUser(View):
     template_name = 'registration/register.html'
 
 

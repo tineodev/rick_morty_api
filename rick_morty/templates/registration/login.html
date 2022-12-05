@@ -5,5 +5,30 @@
 
 
 {% block body %}
-
+<div class="text-center w-50 mt-5 m-auto">
+  <main class="form-signin w-50 m-auto">
+    <form method='post' novalidate>
+      {% csrf_token %}
+      <img class="mb-4" src="https://static.wikia.nocookie.net/wiki-de-rick-morty/images/6/60/Rick_and_Morty.png/revision/latest/scale-to-width-down/1440?cb=20210623034924&path-prefix=es" alt="Logo_Rick_Morty" width="500">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+      <div class="form-floating">
+        <input type="email" class="form-control" name="username" id="floatingInput" placeholder="Username">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <div class="checkbox mb-3 mt-2">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
+      <p class="mt-4 mb-3 text-muted">&copy; 2017-2022</p>
+    </form>
+  </main>
+</div>
 {% endblock body %}
