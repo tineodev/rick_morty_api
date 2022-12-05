@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 from django.views.generic import View
 
-from .models import Pokemon
+from .models import Rick_Morty
 from .request_api import request_api
 import urllib.request, json
 
@@ -17,12 +17,12 @@ class Index(View):
 
 class GenerateDB(View):
     def get(self,request):
-        request_api(2,Pokemon)
+        request_api(2,Rick_Morty)
         return redirect('index')
 
 class DeleteDB(View):
     def get(self,request):
-        Pokemon.objects.all().delete()
+        Rick_Morty.objects.all().delete()
         return redirect('index')
 
 
@@ -30,7 +30,7 @@ class ListDB(View):
     def get(self, request):
         template_name = 'rick_morty/list.html'
         extra_context = {
-            'lista': Pokemon.objects.all()
+            'lista': Rick_Morty.objects.all()
         }
         return render(request, template_name, extra_context)
 
@@ -39,6 +39,6 @@ class DetailDB(View):
         # id = 1
         template_name = 'rick_morty/detail.html'
         extra_context = {
-            'personaje' : Pokemon.objects.get(id=id)
+            'personaje' : Rick_Morty.objects.get(id=id)
         }
         return render(request, template_name, extra_context)

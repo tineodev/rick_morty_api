@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class Pokemon(models.Model):
+class Rick_Morty(models.Model):
     id_self = models.IntegerField()
     name = models.CharField(max_length=50)
     status = models.CharField(max_length=20)
