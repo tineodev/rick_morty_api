@@ -5,5 +5,30 @@
 
 
 {% block body %}
+<div class="mt-5">
+  <div class="card m-auto" style="width: 40%">
+    <div class="card-body">
+      <h2>Register</h2>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="col-12 d-grid mt-3">
+          <button type="submit" class="btn btn-primary">Register User</button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
+<script>
+  const inputs = document.querySelectorAll('input');
+  inputs.forEach((input) => {
+    input.classList.add('form-control')
+  });
+  const labels = document.querySelectorAll('label');
+  labels.forEach((label) => {
+    label.classList.add('form-label')
+  });
+</script>
 {% endblock body %}

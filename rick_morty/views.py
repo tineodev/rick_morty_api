@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 
-from django.views.generic import View
+from django.views.generic import View, CreateView
 
 from .models import Rick_Morty
 from .request_api import request_api
 import urllib.request, json
+
+from .forms import NewUser
 
 
 # Create your views here.
@@ -36,8 +38,13 @@ class DetailDB(View):
 class MainPage(View):
     template_name = 'rick_morty/main.html'
 
-class CreateUser(View):
+class CreateUser(CreateView):
+    form_class = NewUser
     template_name = 'registration/register.html'
+
+    def form_valid(self, form):
+        form.save()
+        return redirect('login')
 
 
 class GenerateDB(View):
