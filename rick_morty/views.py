@@ -4,9 +4,10 @@ from django.views.generic import View, CreateView
 
 from .models import Rick_Morty
 from .request_api import request_api
-import urllib.request, json
 
 from .forms import NewUser
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -35,7 +36,7 @@ class DetailDB(View):
         return render(request, template_name, extra_context)
 
 
-class MainPage(View):
+class MainPage(LoginRequiredMixin, View):
     def get(self, request):
         template_name = 'rick_morty/main.html'
         return render(request, template_name)
@@ -49,12 +50,12 @@ class CreateUser(CreateView):
         return redirect('login')
 
 
-class GenerateDB(View):
+class GenerateDB(LoginRequiredMixin, View):
     def get(self,request):
         request_api(2,Rick_Morty)
         return redirect('index')
 
-class DeleteDB(View):
+class DeleteDB(LoginRequiredMixin, View):
     def get(self,request):
         Rick_Morty.objects.all().delete()
         return redirect('index')
